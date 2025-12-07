@@ -5,3 +5,18 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.38.0",
+    "pre-commit>=4.5.0",
+    "ruff>=0.14.8",
+    "ty>=0.0.1a32",
+]
+
+[tool.poethepoet.tasks]
+format = "uv run ruff format ."
+lint = "uv run ruff check --fix ."
+type-check = "uv run ty ."
+
+check = ["format", "lint", "type-check"]
