@@ -13,3 +13,10 @@ dev = [
     "ruff>=0.14.8",
     "ty>=0.0.1a32",
 ]
+
+[tool.poethepoet.tasks]
+format = "uv run ruff format ."
+lint = "uv run ruff check --fix ."
+type-check = "uv run ty ."
+
+check = ["format", "lint", "type-check"]
