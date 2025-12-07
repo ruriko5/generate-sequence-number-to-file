@@ -14,9 +14,9 @@ dev = [
     "ty>=0.0.1a32",
 ]
 
-[tool.poethepoet.tasks]
+[tool.poe.tasks]
 format = "uv run ruff format ."
 lint = "uv run ruff check --fix ."
-type-check = "uv run ty ."
+type-check = "uv run ty check ."
 
 check = ["format", "lint", "type-check"]
